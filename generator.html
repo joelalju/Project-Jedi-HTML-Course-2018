@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+
+   <head>
+      <meta charset="UTF-8">
+   	<title>Character Generator</title>
+   	<link rel="icon" href="favicon.gif" type="image/gif" size="32x32">
+      <link rel="stylesheet" type="text/css" href="generator.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!---->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+
+<!--Bootstrap CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+
+   </head>
+
+   <body>
+
+      <div id="container"></div>
+
+      <header class="header">
+         <h2 id="title">Character Generator</h2>
+      </header>   
+
+      <main id="main">
+      	<div class="progress">
+    		<div class="progress-bar progress-bar-warning progress-bar-striped progress-bar-animated" style="width:50%;"></div>
+        </div>
+		<section class="section" id="basic">
+            <h4 id="step-title">Step 1: Basic Info</h4>
+            <table id="step">
+               <tr>
+                  <th>Name:</th>
+                  <td>
+                     <input id="Name"></input>
+                  </td>
+                  <td><button type ="button" id="name-button" class="btn">Randomize</button></td>
+               </tr>
+               <tr>
+                  <th>Gender:</th>
+                  <td>
+                     <select>
+                        <option value="Random">Randomize</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Fabulous">Fabulous</option>
+                        <option value="Other">Other</option>
+                     </select>
+                  </td>
+               </tr>
+            </table>
+         </section>
+
+
+         <section class="section" id="physical">
+            <h4 id="step-title">Step 2: Physical Traits</h4>
+            <table id="step">
+               <tr>
+                  <th>Eyes' Color:</th>
+                  <td>
+                     <select>
+                        <option value="Random">Randomize</option>
+                        <option value="Green">Green</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Black">Black</option>
+                        <option value="Brown">Brown</option>
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <th>Hair Color:</th>
+                  <td>
+                     <select>
+                        <option value="Random">Randomize</option>
+                        <option value="Green">Green</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Black">Black</option>
+                        <option value="Brown">Brown</option>
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <th>Skin Color:</th>
+                  <td>
+                     <select>
+                        <option value="Random">Randomize</option>
+                        <option value="Green">Green</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Black">Black</option>
+                        <option value="Brown">Brown</option>
+                     </select>
+                  </td>
+               </tr>
+            </table>
+         </section>
+
+         <section class="section" id="Personality">
+            <h4 id="step-title">Step 3: Personality Traits</h4>
+            <table id="step">
+                <tr>
+                	<th>Main Trait:</th>
+                  	<td>
+	                    <select>
+	                    	<option value="Random">Randomize</option>
+	                        <option value="Random">Nice</option>
+	                        <option value="Male">Arrogant</option>
+	                        <option value="Female">Shy</option>
+	                        <option value="Fabulous">Childish</option>
+	                        <option value="Other">Other</option>
+	                    </select>
+                    </td>
+                </tr>
+                <tr>
+                	<th>Secret Trait:</th>
+                  	<td>
+	                    <select>
+	                    	<option value="Random">Randomize</option>
+	                        <option value="Random">Nice</option>
+	                        <option value="Male">Arrogant</option>
+	                        <option value="Female">Shy</option>
+	                        <option value="Fabulous">Childish</option>
+	                        <option value="Other">Other</option>
+	                    </select>
+                    </td>
+                </tr>
+            </table>
+         </section>
+
+
+         <section class="section" id="step-buttons">
+            <button type ="button" class="btn">Previous Step</button>
+            <button type ="button" class="btn">Next Step</button>
+         </section>
+
+      </main>
+
+      <aside class="aside">
+         <h4><center> - Traits chosen - </center></h4>
+         <table id="steps-done">
+            <tr>
+               <th>
+                  <b>Patatin: </b>
+               </th>
+               <td>
+                  <span class="rainbow">Random</span>
+               </td>
+            </tr>
+
+            <tr>
+               <th>
+                  <b>Patatan: </b>
+               </th>
+               <td>
+                  <span class="rainbow">Random</span>
+               </td>
+            </tr>
+         </table>
+      </aside>
+
+      <footer class="footer">
+         <span> Made with <i class="fa fa-heart"></i> by Joel Alarcón - Barcelona, 2018 </span>
+      </footer>
+   </body>
+
+</html>

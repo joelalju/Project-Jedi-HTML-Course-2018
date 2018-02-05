@@ -1,0 +1,122 @@
+@font-face {
+	font-family: Leitura Display Swashes;
+	src: url(leitura.otf);
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+
+}
+
+#container {
+	margin: 0;
+	padding: 0;
+	width:inherit;
+	height:inherit;
+	position: fixed;
+	background-image:url(background.jpg);
+	opacity: 0.6;
+}
+
+.header {
+/*	border: 1px solid black;
+	border-collapse: collapse; */
+	margin: 10px 5px 10px 10px;
+}
+
+#title {
+	color: solid black;
+	font-family: Leitura Display Swashes;
+}
+
+#main {
+	/*border: 1px solid black;
+	border-collapse: collapse; */
+	position: relative;
+	float: left;
+	width: 49%;
+	margin: 5px 0 0 10px;
+}
+
+#step-title {
+	font-family: Leitura Display Swashes;
+}
+
+.section {
+	/*border: 1px solid black;
+	border-collapse: collapse; */
+	margin: 5px 20px 5px 20px;
+	width: 70%;
+}
+
+#step {
+	border-spacing: 0 10px;
+	margin: 0 0 0 15px;
+}
+
+th {
+	font-family: Leitura Display Swashes;
+}
+
+#name-button {
+	weight: 80%;
+
+}
+
+.aside {
+	border: 1px solid black;
+	border-collapse: collapse; 
+
+	width: 49%;
+	position: relative;
+	float: right;
+	margin-right: 5px;
+
+	background-image:url(old-paper.jpg);
+	background-repeat: repeat-x;
+
+	font-family: Leitura Display Swashes;
+}
+
+#steps-done {
+/*	border-collapse: separate; */
+	border-spacing: 10px 0;
+	margin: 10px;
+}
+
+.rainbow {
+
+  background: linear-gradient(to right, red, green, blue);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.footer {
+	/*border: 1px solid black;
+	border-collapse: collapse;*/
+	position: fixed;
+	left: 0;
+	bottom: 0; 
+	font-size: 10pt;
+	background-color: white;
+}
+
+
+.btn {
+	display: inline-block;
+	background-color: #f4511e;
+	border-radius: 4px;
+
+	text-align: center;
+
+	cursor: pointer;
+	font-family: Leitura Display Swashes;
+}
+
+.progress-bar {
+	color: orange;
+}
