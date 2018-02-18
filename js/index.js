@@ -31,7 +31,7 @@ $(window).on("load", function() {
 			$("#finished").fadeIn("slow", "swing");
 			$("#finished").css({"display":"block"});
 
-			h_section = ["Main Trait", "Secret Trait"];
+			h_section = ["M.Trait", "S.Trait"];
 			section = [$("#m_trait option:selected").text(), $("#s_trait option:selected").text()];
 		}
 
@@ -62,8 +62,8 @@ $(window).on("load", function() {
 			$("#personality").fadeIn("slow", "swing");
 			$("#personality").css({"display":"block"});
 		} 
-		//erase_traits(step);
 		--step;
+		erase_traits(step);
 		if (step < 4) $("#next").css({"display":"inline"});
 		if (step == 1) $("#previous").css({"display":"none"});
 	});
@@ -86,7 +86,14 @@ function add_traits(step, h_section, section) {
 		console.log(section[i]);
 		++i;
 	}
-	if (step ==1) content1 = content;
+	if      (step == 1) content1 = content;
 	else if (step == 2) content2 = content;
+	else if (step == 3) content3 = content;
 	$("#steps-done").append(content);
+}
+
+function erase_traits(step) {
+	if      (step == 3) $("#steps-done").html(content1+content2);
+	else if (step == 2) $("#steps-done").html(content1);	
+	else if (step == 1) $("#steps-done").html("");
 }
