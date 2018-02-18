@@ -1,7 +1,15 @@
 $(window).on("load", function() {
 
 	var step = 1;
+	var name_list = ["Rogelio", "Rigoberto", "Alfonsito", "Sebas Tian", "Martina", "Pony", "Lady Di", "Picasso", "Gadriel", "Brann"];
 
+
+	$("#name-button").click (function() {
+		var rand = Math.floor(Math.random()*10);
+		console.log(name_list[rand]);
+		$('.char_name').val(name_list[rand]);
+		console.log($(".char_name").val());
+	});
 
 
 	$("#next").click (function() {
