@@ -15,14 +15,22 @@ $(window).on("load", function() {
 	$("#next").click (function() {
 		var section;
 		var h_section;
+		var aux;
+		var aux2;
+		var aux3;
 		if (step == 1) {
 			$("#basic").css({"display":"none"});
 
 			$("#physical").fadeIn("slow", "swing");
 			$("#physical").css({"display":"block"});
 
+			aux = $(".char_name").val();
+			aux2 = $("#gender option:selected").text();
+			if (aux == "") aux = "Nameless";
+			if (aux2 == "Randomize") aux2 = rand_option($("#gender > option").toArray());
+
 			h_section = ["Name","Gender"];
-			section = [$(".char_name").val(), $("#gender option:selected").text()];
+			section = [aux, aux2];
 		}
 		else if (step == 2) {
 			$("#physical").css({"display":"none"});
@@ -30,8 +38,15 @@ $(window).on("load", function() {
 			$("#personality").fadeIn("slow", "swing");
 			$("#personality").css({"display":"block"});
 
+			aux = $("#eyes option:selected").text();
+			aux2 = $("#hair option:selected").text();
+			aux3 = $("#skin option:selected").text();
+			if (aux == "Randomize") aux = rand_option($("#eyes > option").toArray());
+			if (aux2 == "Randomize") aux2 = rand_option($("#hair > option").toArray());
+			if (aux3 == "Randomize") aux3 = rand_option($("#skin > option").toArray());
+
 			h_section = ["Eyes", "Hair", "Skin"];
-			section = [$("#eyes option:selected").text(), $("#hair option:selected").text(), $("#skin option:selected").text()];
+			section = [aux, aux2, aux3];
 		}
 		else {
 			$("#personality").css({"display":"none"});
@@ -39,8 +54,13 @@ $(window).on("load", function() {
 			$("#finished").fadeIn("slow", "swing");
 			$("#finished").css({"display":"block"});
 
+			aux = $("#m_trait option:selected").text();
+			aux2 = $("#s_trait option:selected").text();
+			if (aux == "Randomize") aux = rand_option($("#m_trait > option").toArray());
+			if (aux2 == "Randomize") aux2 = rand_option($("#s_trait > option").toArray());
+
 			h_section = ["M.Trait", "S.Trait"];
-			section = [$("#m_trait option:selected").text(), $("#s_trait option:selected").text()];
+			section = [aux, aux2];
 		}
 
 		add_traits(step, h_section, section);
@@ -87,11 +107,8 @@ function add_traits(step, h_section, section) {
 	var length = section.length;
 	var content = "";
 	while (i < length) {
-		content = content+"<tr><th><b>"+ h_section[i] +": </b></th><td><span class='rainbow'>"
+		content = content+"<tr><th><b>"+ h_section[i] +": </b></th><td><span>"
 		+section[i]+ "</span></td></tr>";
-
-		console.log (content);
-		console.log(section[i]);
 		++i;
 	}
 	if      (step == 1) content1 = content;
@@ -104,4 +121,11 @@ function erase_traits(step) {
 	if      (step == 3) $("#steps-done").html(content1+content2);
 	else if (step == 2) $("#steps-done").html(content1);	
 	else if (step == 1) $("#steps-done").html("");
+}
+
+function rand_option(list) {
+	var elemLength = list.length -1;
+	var randomnum = Math.floor(Math.random()*elemLength);
+	var randomitem = list[randomnum+1];
+	return randomitem.value;
 }
