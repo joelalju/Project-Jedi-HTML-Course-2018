@@ -2,30 +2,48 @@ $(window).on("load", function() {
 
 	var step = 1;
 
-	$("#next").click (function() {
 
+
+	$("#next").click (function() {
+		var section;
+		var h_section;
 		if (step == 1) {
-			//$("#basic").fadeOut("slow","swing");
 			$("#basic").css({"display":"none"});
 
 			$("#physical").fadeIn("slow", "swing");
 			$("#physical").css({"display":"block"});
+
+			h_section = ["Name","Gender"];
+			section = [$(".char_name").val(), $("#gender option:selected").text()];
 		}
 		else if (step == 2) {
-			//$("#physical").fadeOut("slow","swing");
 			$("#physical").css({"display":"none"});
 
 			$("#personality").fadeIn("slow", "swing");
 			$("#personality").css({"display":"block"});
+
+			h_section = ["Eyes", "Hair", "Skin"];
+			section = [$("#eyes option:selected").text(), $("#hair option:selected").text(), $("#skin option:selected").text()];
 		}
-		//add_traits(step);
+		else {
+			$("#personality").css({"display":"none"});
+
+			$("#finished").fadeIn("slow", "swing");
+			$("#finished").css({"display":"block"});
+
+			h_section = ["Main Trait", "Secret Trait"];
+			section = [$("#m_trait option:selected").text(), $("#s_trait option:selected").text()];
+		}
+
+		add_traits(step, h_section, section);
 		++step;
+		if (step == 4) $("#next").css({"display":"none"});
+		if (step > 1) $("#previous").css({"display":"inline"});
 	});
 
 	$("#previous").click (function() {
 
 		if (step == 2) {
-			//$("#physical").fadeOut("slow","swing");
 			$("#physical").css({"display":"none"});
 
 			$("#basic").fadeIn("slow", "swing");
@@ -33,23 +51,42 @@ $(window).on("load", function() {
 			
 		}
 		else if (step == 3) {
-			//$("#personality").fadeOut("slow","swing");
 			$("#personality").css({"display":"none"});
 
 			$("#physical").fadeIn("slow", "swing");
 			$("#physical").css({"display":"block"});
 		}
+		else {
+			$("#finished").css({"display":"none"});
+
+			$("#personality").fadeIn("slow", "swing");
+			$("#personality").css({"display":"block"});
+		} 
 		//erase_traits(step);
 		--step;
+		if (step < 4) $("#next").css({"display":"inline"});
+		if (step == 1) $("#previous").css({"display":"none"});
 	});
 
 });
 
-function add_traits(step) {
-	if (step == 1) {
+var content1;
+var content2;
+var content3;
 
-	}
-	if (step == 2) {
+function add_traits(step, h_section, section) {
+	var i = 0;
+	var length = section.length;
+	var content = "";
+	while (i < length) {
+		content = content+"<tr><th><b>"+ h_section[i] +": </b></th><td><span class='rainbow'>"
+		+section[i]+ "</span></td></tr>";
 
+		console.log (content);
+		console.log(section[i]);
+		++i;
 	}
+	if (step ==1) content1 = content;
+	else if (step == 2) content2 = content;
+	$("#steps-done").append(content);
 }

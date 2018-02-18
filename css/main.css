@@ -87,7 +87,7 @@ th {
 	margin: 10px;
 }
 
-#physical, #personality {
+#physical, #personality, #finished, #previous {
 	display: none;
 }
 

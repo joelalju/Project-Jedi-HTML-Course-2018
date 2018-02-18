@@ -42,14 +42,14 @@
                <tr>
                   <th>Name:</th>
                   <td>
-                     <input id="Name"></input>
+                     <input id="name" class="char_name" placeholder="Name" size="30"></input>
                   </td>
                   <td><button type ="button" id="name-button" class="btn">Randomize</button></td>
                </tr>
                <tr>
                   <th>Gender:</th>
                   <td>
-                     <select>
+                     <select id="gender" name="Gender">
                         <option value="Random">Randomize</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -68,7 +68,7 @@
                <tr>
                   <th>Eyes' Color:</th>
                   <td>
-                     <select>
+                     <select id="eyes" name="Eyes">
                         <option value="Random">Randomize</option>
                         <option value="Green">Green</option>
                         <option value="Blue">Blue</option>
@@ -80,7 +80,7 @@
                <tr>
                   <th>Hair Color:</th>
                   <td>
-                     <select>
+                     <select id="hair">
                         <option value="Random">Randomize</option>
                         <option value="Green">Green</option>
                         <option value="Blue">Blue</option>
@@ -92,7 +92,7 @@
                <tr>
                   <th>Skin Color:</th>
                   <td>
-                     <select>
+                     <select id="skin">
                         <option value="Random">Randomize</option>
                         <option value="Green">Green</option>
                         <option value="Blue">Blue</option>
@@ -110,7 +110,7 @@
                 <tr>
                 	<th>Main Trait:</th>
                   	<td>
-	                    <select>
+	                    <select id="m_trait">
 	                    	<option value="Random">Randomize</option>
 	                        <option value="Random">Nice</option>
 	                        <option value="Male">Arrogant</option>
@@ -123,8 +123,8 @@
                 <tr>
                 	<th>Secret Trait:</th>
                   	<td>
-	                    <select>
-	                    	<option value="Random">Randomize</option>
+	                    <select id="s_trait">
+	                    	  <option value="Random">Randomize</option>
 	                        <option value="Random">Nice</option>
 	                        <option value="Male">Arrogant</option>
 	                        <option value="Female">Shy</option>
@@ -136,6 +136,9 @@
             </table>
          </section>
 
+         <section class="section" id="finished">
+            <h4 id="step-title">You finished!</h4>
+         </section>
 
          <section class="section" id="step-buttons">
             <button type ="button" class="btn" id="previous">Previous Step</button>
@@ -146,17 +149,7 @@
 
       <aside class="aside">
          <h4><center> - Traits chosen - </center></h4>
-         <table id="steps-done">
-            <tr>
-               <th>
-                  <b>Patatin: </b>
-               </th>
-               <td>
-                  <span class="rainbow">Random</span>
-               </td>
-            </tr>
-
-         </table>
+         <table id="steps-done"></table>
       </aside>
 
       <footer class="footer">
